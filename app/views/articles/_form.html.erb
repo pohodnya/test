@@ -1,0 +1,38 @@
+<%= form_for @article do |f| %>
+  
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= @article.errors.count%> Ошибка(и) при заполнении формы:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>
+    <h3><%= f.label :'Название поста' %></h3>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <h3><%= f.label :'Текст поста' %></h3>
+    <%= f.text_area :text %>
+  </p>
+  <%= f.fields_for :tags do |tags| %>
+    <p>
+      <h3><%= tags.label :tag, :'Тэги' %></h3>
+      <%= tags.text_field :tag %>
+      <%= tags.check_box :_destroy %>  
+      <%= tags.label :_destroy, "Удалить" %>  
+    </p>
+  <% end %>
+ 
+  <p>
+    <%= f.submit :'Отправить' %>
+  </p>
+  
+<% end %>

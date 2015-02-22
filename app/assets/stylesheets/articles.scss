@@ -1,0 +1,82 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+	width: 100%;
+}
+
+.content {
+	width: 700px;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align:center;
+	border-bottom: 4px solid #ccc;
+}
+
+.add_post {
+	text-align: right;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #ccc;
+}
+
+.add_post a {
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+}
+
+.add_post a:hover {
+	color: green;
+	text-decoration: none;
+}
+
+.post {
+	border: 2px dashed #ccc;
+	border-top: none;
+	padding: 10px;
+}
+
+h2 a{
+	text-decoration: none;
+	color: #ccc;
+}
+
+h2 a:hover {
+	color: black;
+}
+
+.post p {
+	margin:0;
+}
+
+.option {
+	padding: 0 5px;
+	width: 100px;
+	display: inline-block;
+	float:right;
+	border-bottom: 2px dashed #ccc;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	color:red;
+	text-decoration: underline;
+}
+
+textarea {
+	width: 100%;
+	height: 200px;
+}
+
+.tags {
+	border-top: 1px solid #ccc;
+	margin-top: 10px;
+	padding-top: 10px;
+}

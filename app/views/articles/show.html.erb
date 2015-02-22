@@ -1,0 +1,30 @@
+﻿<h1>Тестовый блог на Ruby on Rails</h1>
+
+<div class="add_post"><%= link_to 'Редактировать пост', edit_article_path(@article) %></div>
+ 
+<div class="post">
+		<h2><%= @article.title %></h2>
+ 
+		<p><%= @article.text %></p>
+		<div class="tags">Тэги: <%= render @article.tags %></div>
+</div>
+
+<h2>Комментарии</h2>
+<%= render @article.comments %>
+
+<h2>Добавить комментарий:</h2>
+<%= render 'comments/form' %>
+
+<h2>Добавить тэги</h2>
+<%= @params %>
+<%= form_for([@article, @article.tags.build]) do |f| %>
+  <p>
+    <%= f.label :'Tag' %><br>
+    <%= f.text_field :tag %>
+  </p>
+  <p>
+    <%= f.submit :Отправить%>
+  </p>
+<% end %>
+
+<%= link_to 'Вернуться назад', articles_path %>
