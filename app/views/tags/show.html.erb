@@ -1,0 +1,14 @@
+<h1>Тестовый блог на Ruby on Rails</h1>
+
+<div class="add_post"></div>
+ 
+<div class="post">
+  <h2>Список постов по тэгу <% @tag.tag %> </h2>
+  <% @articles_by_tag.each do |current_article| %>
+    <h3><%= link_to current_article.title, article_path(current_article) %></h3>
+  <% end %>
+</div>
+
+
+
+<%= link_to 'Вернуться назад', articles_path %>

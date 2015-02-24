@@ -6,7 +6,12 @@
 		<h2><%= @article.title %></h2>
  
 		<p><%= @article.text %></p>
-		<div class="tags">Тэги: <%= render @article.tags %></div>
+		<div class="tags">
+      Тэги: 
+      <% @article.tags.each do |tag| %>
+        <%= link_to tag.tag, article_tag_path(@article._id,tag._id) %>,
+      <% end %>
+    </div>
 </div>
 
 <h2>Комментарии</h2>

@@ -4,7 +4,8 @@ class TagsController < ApplicationController
   end
 
   def show
-
+    @tag = Tag.find(params[:id])
+    @articles_by_tag = @tag.articles
   end
   
   def create
